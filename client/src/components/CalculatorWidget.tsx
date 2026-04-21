@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Calculator, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -84,55 +83,57 @@ export default function CalculatorWidget() {
             transition={{ duration: 0.2 }}
             className="mb-4"
           >
-            <Card className="w-64 p-4 shadow-xl border-border bg-background">
+            <Card className="w-72 p-5 glass border-none">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="font-semibold text-sm">Kalkulyator</h3>
-                <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => setIsOpen(false)}>
+                <h3 className="font-bold text-sm text-slate-700 dark:text-slate-300">Kalkulyator</h3>
+                <button 
+                  className="h-8 w-8 rounded-full flex items-center justify-center neumorph-button text-slate-500 hover:text-slate-800"
+                  onClick={() => setIsOpen(false)}
+                >
                   <X className="h-4 w-4" />
-                </Button>
+                </button>
               </div>
 
-              <div className="bg-muted p-3 rounded-lg mb-4 text-right overflow-hidden break-all min-h-[3rem] flex items-center justify-end">
-                <span className="text-2xl font-medium tracking-tight">{display}</span>
+              <div className="neumorph-inset p-4 rounded-xl mb-6 text-right overflow-hidden break-all min-h-[4rem] flex items-center justify-end">
+                <span className="text-3xl font-black text-slate-800 dark:text-slate-200 tracking-tight">{display}</span>
               </div>
 
-              <div className="grid grid-cols-4 gap-2">
-                <Button variant="secondary" onClick={handleClear}>C</Button>
-                <Button variant="secondary" onClick={toggleSign}>+/-</Button>
-                <Button variant="secondary" onClick={handlePercent}>%</Button>
-                <Button variant="default" onClick={() => handleOperatorClick("/")}>÷</Button>
+              <div className="grid grid-cols-4 gap-3">
+                <button className="neumorph-button py-3 text-red-500 font-bold" onClick={handleClear}>C</button>
+                <button className="neumorph-button py-3 text-slate-600 font-bold" onClick={toggleSign}>+/-</button>
+                <button className="neumorph-button py-3 text-slate-600 font-bold" onClick={handlePercent}>%</button>
+                <button className="neumorph-button py-3 text-blue-600 font-bold text-lg" onClick={() => handleOperatorClick("/")}>÷</button>
 
-                <Button variant="outline" onClick={() => handleNumClick("7")}>7</Button>
-                <Button variant="outline" onClick={() => handleNumClick("8")}>8</Button>
-                <Button variant="outline" onClick={() => handleNumClick("9")}>9</Button>
-                <Button variant="default" onClick={() => handleOperatorClick("*")}>×</Button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("7")}>7</button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("8")}>8</button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("9")}>9</button>
+                <button className="neumorph-button py-3 text-blue-600 font-bold text-lg" onClick={() => handleOperatorClick("*")}>×</button>
 
-                <Button variant="outline" onClick={() => handleNumClick("4")}>4</Button>
-                <Button variant="outline" onClick={() => handleNumClick("5")}>5</Button>
-                <Button variant="outline" onClick={() => handleNumClick("6")}>6</Button>
-                <Button variant="default" onClick={() => handleOperatorClick("-")}>-</Button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("4")}>4</button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("5")}>5</button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("6")}>6</button>
+                <button className="neumorph-button py-3 text-blue-600 font-bold text-lg" onClick={() => handleOperatorClick("-")}>-</button>
 
-                <Button variant="outline" onClick={() => handleNumClick("1")}>1</Button>
-                <Button variant="outline" onClick={() => handleNumClick("2")}>2</Button>
-                <Button variant="outline" onClick={() => handleNumClick("3")}>3</Button>
-                <Button variant="default" onClick={() => handleOperatorClick("+")}>+</Button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("1")}>1</button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("2")}>2</button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick("3")}>3</button>
+                <button className="neumorph-button py-3 text-blue-600 font-bold text-lg" onClick={() => handleOperatorClick("+")}>+</button>
 
-                <Button variant="outline" className="col-span-2" onClick={() => handleNumClick("0")}>0</Button>
-                <Button variant="outline" onClick={() => handleNumClick(".")}>.</Button>
-                <Button variant="default" onClick={calculate}>=</Button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg col-span-2" onClick={() => handleNumClick("0")}>0</button>
+                <button className="neumorph-button py-3 text-slate-700 font-bold text-lg" onClick={() => handleNumClick(".")}>.</button>
+                <button className="neumorph-button py-3 text-white bg-blue-500 font-bold text-lg" onClick={calculate}>=</button>
               </div>
             </Card>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <Button
-        size="icon"
-        className={`h-14 w-14 rounded-full shadow-lg transition-transform hover:scale-105 ${isOpen ? 'bg-primary/90' : 'bg-primary'}`}
+      <button
+        className={`h-16 w-16 rounded-full flex items-center justify-center transition-all hover:scale-105 active:scale-95 ${isOpen ? 'neumorph-inset text-blue-600' : 'neumorph bg-blue-600 text-white shadow-blue-500/50 shadow-lg'}`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Calculator className="h-6 w-6" />
-      </Button>
+        <Calculator className="h-7 w-7" />
+      </button>
     </div>
   );
 }
