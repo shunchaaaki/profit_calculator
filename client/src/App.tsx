@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Router, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import CalculatorWidget from "./components/CalculatorWidget";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
@@ -34,6 +35,7 @@ function App() {
           <Router base={import.meta.env.BASE_URL}>
             <Toaster />
             <RouterContent />
+            <CalculatorWidget />
           </Router>
         </TooltipProvider>
       </ThemeProvider>
