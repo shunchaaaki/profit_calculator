@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Router, Switch } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import CalculatorWidget from "./components/CalculatorWidget";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -32,7 +33,7 @@ function App() {
         // switchable
       >
         <TooltipProvider>
-          <Router base={import.meta.env.BASE_URL}>
+          <Router hook={useHashLocation}>
             <Toaster />
             <RouterContent />
             <CalculatorWidget />
