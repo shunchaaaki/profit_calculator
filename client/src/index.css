@@ -194,43 +194,43 @@
 /* Neomorfizm kartochka stillar */
 .neumorph {
   background: var(--neumorph-bg, #e0e5ec);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.6);
+  box-shadow: 6px 6px 12px rgba(163, 177, 198, 0.6), -6px -6px 12px rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-xl);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 .dark .neumorph {
-  box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.4), -9px -9px 16px rgba(74, 85, 104, 0.1);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4), -6px -6px 12px rgba(74, 85, 104, 0.1);
 }
 
 .neumorph:hover {
-  transform: translateY(-2px);
-  box-shadow: 12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+  box-shadow: 8px 8px 16px rgba(163, 177, 198, 0.7), -8px -8px 16px rgba(255, 255, 255, 0.7);
 }
 
 .dark .neumorph:hover {
-  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.5), -12px -12px 20px rgba(74, 85, 104, 0.15);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5), -8px -8px 16px rgba(74, 85, 104, 0.15);
 }
 
 .neumorph-inset {
   background: var(--neumorph-bg, #e0e5ec);
-  box-shadow: inset 5px 5px 10px rgba(163, 177, 198, 0.6), inset -5px -5px 10px rgba(255, 255, 255, 0.6) !important;
+  box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.6) !important;
   border-radius: var(--radius-lg);
 }
 
 .dark .neumorph-inset {
-  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(74, 85, 104, 0.1) !important;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(74, 85, 104, 0.1) !important;
 }
 
 .neumorph-button {
   background: var(--neumorph-bg, #e0e5ec);
-  box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.6);
+  box-shadow: 4px 4px 8px rgba(163, 177, 198, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-lg);
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
 .dark .neumorph-button {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(74, 85, 104, 0.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -4px -4px 8px rgba(74, 85, 104, 0.1);
 }
 
 .neumorph-button:hover {
@@ -239,26 +239,25 @@
 
 .neumorph-button:active {
   background: var(--neumorph-bg, #e0e5ec);
-  box-shadow: inset 5px 5px 10px rgba(163, 177, 198, 0.6), inset -5px -5px 10px rgba(255, 255, 255, 0.6) !important;
+  box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.6) !important;
   transform: translateY(1px);
 }
 
 .dark .neumorph-button:active {
-  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(74, 85, 104, 0.1) !important;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(74, 85, 104, 0.1) !important;
 }
 
-/* Glassmorphism */
+/* Glassmorphism - Optimized for Mobile */
 .glass {
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(240, 243, 248, 0.95);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.05);
+  /* backdrop-filter is completely removed to prevent severe mobile lag */
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-xl);
 }
 
 .dark .glass {
-  background: rgba(17, 25, 40, 0.6);
+  background: rgba(26, 32, 44, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 

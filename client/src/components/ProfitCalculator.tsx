@@ -512,11 +512,14 @@ export default function ProfitCalculator() {
 
               {/* Sof Foyda - Asosiy Natija */}
               <Card
-                className={`p-8 sm:col-span-2 neumorph border-none relative overflow-hidden transition-all duration-500 ${
-                  isProfitable ? "ring-2 ring-green-400/50 shadow-[0_0_30px_rgba(34,197,94,0.15)] dark:shadow-[0_0_30px_rgba(34,197,94,0.05)]" : "ring-2 ring-red-400/50 shadow-[0_0_30px_rgba(239,68,68,0.15)] dark:shadow-[0_0_30px_rgba(239,68,68,0.05)]"
+                className={`p-8 sm:col-span-2 neumorph border-none relative overflow-hidden transition-colors duration-500 ${
+                  isProfitable ? "ring-2 ring-green-400/50 shadow-[0_0_15px_rgba(34,197,94,0.15)] dark:shadow-[0_0_15px_rgba(34,197,94,0.05)]" : "ring-2 ring-red-400/50 shadow-[0_0_15px_rgba(239,68,68,0.15)] dark:shadow-[0_0_15px_rgba(239,68,68,0.05)]"
                 }`}
               >
-                <div className={`absolute top-0 right-0 w-32 h-32 transform translate-x-10 -translate-y-10 rounded-full blur-3xl opacity-20 pointer-events-none ${isProfitable ? "bg-green-500" : "bg-red-500"}`}></div>
+                <div 
+                  className="absolute top-0 right-0 w-48 h-48 transform translate-x-10 -translate-y-10 rounded-full opacity-20 pointer-events-none"
+                  style={{ background: isProfitable ? 'radial-gradient(circle, rgba(34,197,94,0.8) 0%, rgba(34,197,94,0) 70%)' : 'radial-gradient(circle, rgba(239,68,68,0.8) 0%, rgba(239,68,68,0) 70%)' }}
+                ></div>
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
                     <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-2">
