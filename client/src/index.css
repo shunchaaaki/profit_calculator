@@ -262,12 +262,18 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Input va Slider stillar */
 input[type="number"],
 input[type="text"] {
-  @apply rounded-xl bg-background text-foreground neumorph-inset border-none;
+  @apply rounded-xl bg-background text-foreground border-none;
+  background: var(--neumorph-bg, #e0e5ec);
+  box-shadow: inset 5px 5px 10px rgba(163, 177, 198, 0.6), inset -5px -5px 10px rgba(255, 255, 255, 0.6) !important;
   padding: 0.75rem 1rem;
   transition: all 0.2s ease;
+}
+
+.dark input[type="number"],
+.dark input[type="text"] {
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(74, 85, 104, 0.1) !important;
 }
 
 input[type="number"]:focus,
