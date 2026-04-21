@@ -35,6 +35,8 @@ jobs:
         run: pnpm install --frozen-lockfile --reporter=silent
 
       - name: Build web assets
+        env:
+          IS_MOBILE_BUILD: "true"
         run: pnpm build:web
 
       - name: Sync Capacitor Android

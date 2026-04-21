@@ -152,7 +152,7 @@ function vitePluginManusDebugCollector(): Plugin {
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "profit_calculator";
-const base = process.env.GITHUB_ACTIONS === "true" ? `/${repoName}/` : "/";
+const base = process.env.IS_MOBILE_BUILD === "true" ? "/" : (process.env.GITHUB_ACTIONS === "true" ? `/${repoName}/` : "/");
 
 export default defineConfig({
   base,
